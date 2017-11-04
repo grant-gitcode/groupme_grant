@@ -1,0 +1,45 @@
+{
+  "manifest_version" : 2,
+
+  "name" : "LinkGrant: A GroupMe Link Sharing Extension",
+  "description" : "This extension allows the user to easily share links on GroupMe. Press
+  Alt+Shift+G when on a webpage which you wish to share. In the pop up window, type the name of the group
+  to which you wish to share the link, and enter an optional message to share with the link. Hit enter
+  when you're ready, and the link will be shared! It's that simple!",
+  "version" : "1.0",
+
+  "background" : {
+    "scripts" : ["background.js"]
+  },
+
+  "browser_action" : {
+    "default_icon" : "grant.png",
+    "default_popup" : "popup.html"
+  },
+
+  "content_security_policy" : "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+
+  "commands" : {
+    "_execute_browser_action" : {
+      "suggested_key" : {
+        "default" : "Alt+Shift+G",
+        "linux" : "Alt+Shift+G"
+      },
+      "description" : "Brings up GroupMe group search and messaging window."
+    }
+  },
+
+  "icons" : {
+    "16" : "grant.png",
+    "48" : "grant.png",
+    "128" : "grant.png"
+  },
+
+  "permissions" : [
+    "activeTab",
+    "tabs",
+    "https://ajax.googleapis.com/"
+  ]
+
+
+}

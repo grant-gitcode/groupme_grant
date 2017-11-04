@@ -1,0 +1,53 @@
+
+<html>
+<head>
+  <style>
+  body {
+    width: 375px;
+  }
+  div {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1em;
+    display: inline;
+  }
+  img {
+    width: 375px;
+    padding-top: 10px;
+  }
+  input {
+    width: 375px;
+    font-size: 1.3em;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  option {
+    font-size: 1.3em;
+  }
+  p {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body id="bod">
+  <h3><a href="getting_started.html">Getting Started</a></h3>
+<div>
+  <div id="divHide">
+    <input list="groupList" id="groupInput">
+      <datalist id="groupList">
+        <option value="groupy">
+      </datalist>
+    </input type="submit">
+    <input type="text" placeholder="GroupMe message here" id="optionalMessage"></input>
+  </div>
+  <img src="grant.png">
+  <p id="alertID"></p>
+</div>
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
