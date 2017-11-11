@@ -1,6 +1,10 @@
 var baseURL = "https://api.groupme.com/v3";
 var token = "?token=";
 
+//Get the access token from the background page.
+var access_token = chrome.extension.getBackgroundPage().access_token;
+token = token.concat(access_token);
+
 //Hides the alert.
 var postAlert = document.getElementById('alertID');
 $(postAlert).hide();
@@ -8,7 +12,6 @@ $(postAlert).hide();
 var bod = document.getElementById('bod');
 var div = document.getElementById('divHide');
 
-//Name, text and id must be global to be used in different functions.
 var name = "";
 var id = "";
 var text = "";
@@ -33,6 +36,7 @@ optionalMessage.addEventListener('change',callAsyncPost);
 
 //Function to post "GET" request to get all group data.
 function queryGroupIndex(callback) {
+
   $.get(baseURL + "/groups" + token,
     {"per_page" : 100},
     callback);
@@ -204,14 +208,3 @@ function onGroupNotFound() {
 
   console.log('Group not found.');
 }
-
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        if (request.msg === "new tab") {
-          console.log('haha');
-        }
-        else {
-          console.log(request.msg);
-        }
-    }
-);
